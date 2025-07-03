@@ -14,6 +14,11 @@
     margin-right: auto;
 }
 
+.new_object
+{
+    margin: 2%;
+}
+
 .large_space
 {
     margin-top: 3%;
@@ -30,4 +35,14 @@
 {
     margin-top: 1%;
     margin-bottom: 1%;
+}
+
+.no_decoration
+{
+    text-decoration: none;
+}
+
+.color_white
+{
+    color: white;
 }

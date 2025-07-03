@@ -13,15 +13,15 @@
     <body>
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="#"> Chordly </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="#"> Home </a>
-                  <a class="nav-link" href="#"> About Us </a>
-                  <a class="nav-link" href="#"> Composer </a>            
+                  <a class="nav-link" href="#"> About </a>
+                  <a class="nav-link" href="#"> Contact </a>
+                  <a class="nav-link" href="#"> Privacy </a>            
                   <div class="navbar-right">
                     <a class="nav-link" href="#"> Sign In/Sign Up </a>
                   </div>
@@ -30,13 +30,17 @@
             </div>
           </nav>
 
-        <h1> This is the temp! </h1>
         {% block main %}{% endblock %}
 
     </body>
-    <footer class="bg-dark">
+    <footer class="bg-dark" data-bs-theme="dark">
         <div>
-
+          <p class="center_text color_white"> |
+            <a href="#" class="no_decoration color_white"> About </a>  |
+            <a href="#" class="no_decoration color_white"> Contact </a>  |
+            <a href="#" class="no_decoration color_white"> Privacy </a>  |
+            <br>© Chordly 2025
+          </p>
         </div>
     </footer>
 </html>

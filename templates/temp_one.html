@@ -18,17 +18,17 @@
     <body>
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"> MyMelodic </a>
+              <a class="navbar-brand" href="{{ url_for('Home') }}"> MyMelodic </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="Initial_Home/index.html"> About </a>
-                  <a class="nav-link" href="#cta"> Contact </a>
+                  <a class="nav-link" href="{{ url_for('About') }}"> About </a>
+                  <a class="nav-link" href="{{ url_for('Contact') }}"> Contact </a>
                   <a class="nav-link" href="{{ url_for('Privacy') }}"> Privacy </a>            
                   <div class="navbar-right">
-                    <a class="nav-link" href=""> Sign In/Sign Up </a>
+                    <a class="nav-link" href="{{ url_for('Login') }}"> Login </a>
                   </div>
                 </div>
               </div>
@@ -41,10 +41,10 @@
     <footer class="bg-dark" data-bs-theme="dark">
         <div>
           <p class="center_text color_white"> |
-            <a href="#" class="no_decoration color_white"> About </a>  |
-            <a href="#" class="no_decoration color_white"> Contact </a>  |
-            <a href="#" class="no_decoration color_white"> Privacy </a>  |
-            <br>© Chordly 2025
+            <a href="{{ url_for('About') }}" class="no_decoration color_white"> About </a>  |
+            <a href="{{ url_for('Contact') }}" class="no_decoration color_white"> Contact </a>  |
+            <a href="{{ url_for('Privacy') }}" class="no_decoration color_white"> Privacy </a>  |
+            <br>© MyMelodic 2025
           </p>
         </div>
     </footer>

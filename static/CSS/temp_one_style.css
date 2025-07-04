@@ -1,8 +1,3 @@
-footer
-{
-    padding: 4%;
-}
-
 #parralax
 {
     background-image: url("/static/images/hero_image.jpg");
@@ -30,4 +25,9 @@ footer
 #contact_form
 {
     background-color: lightgray;
+}
+
+footer
+{
+    padding: 2%;
 }

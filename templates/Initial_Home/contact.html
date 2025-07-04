@@ -1,0 +1,26 @@
+{% extends "temp_one.html" %}
+{% block main %}
+
+<div class="new_page">
+    <h1 class="center_text medium_space"> Contact Us </h1>
+    <hr>
+
+    <div class="new_object">
+        <form action="mailto:adespinosa2002+MyMelodic@gmail.com" method="post" encytype="text/plain" class="center_object" style="width: 50%;">
+            <div class="form-group row">
+                <label for="user_email" class="col-sm-4"> Email:  </label>
+                <div class="col-sm-8">
+                    <input id="user_email" class="form-control" name="user_email" type="email" placeholder="Enter your email here...">
+                </div>
+
+                <label for="input_content" class="col-sm-4"> Enter Message: </label>
+                <div class="col-sm-8">
+                    <input id="input_content" class="form-control" name="input_content" type="text" placeholder="Enter your message...">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary small_space" style="display: block; margin-left:auto; margin-right:auto;"> Submit </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -16,7 +16,12 @@
 
 .new_object
 {
-    margin: 2%;
+    margin: 5%;
+}
+
+.new_small_object
+{
+    padding: 5%;
 }
 
 .large_space
@@ -44,5 +49,4 @@
 
 .color_white
 {
-    color: white;
 }

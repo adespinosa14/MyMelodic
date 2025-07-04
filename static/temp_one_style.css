@@ -7,7 +7,7 @@ footer
 {
     background-image: url("/static/images/hero_image.jpg");
   /* Set a specific height */
-  min-height: 800px;
+  min-height: 750px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -21,8 +21,13 @@ footer
 #hero
 {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+#contact_form
+{
+    background-color: lightgray;
 }

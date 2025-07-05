@@ -3,5 +3,28 @@
 
 <div class="new_page">
     <h1> Login Page </h1>
+
+    <form>
+        <div class="mb-4">
+
+            <!-- Email Input -->
+
+            <label for="user_email" class="form-label medium_space"> Email Address: </label>
+            <input name="user_email" class="form-control" type="email">
+            <div class="form-text"> We would never share your information with anyone! </div>
+
+            <!-- Password Input -->
+
+            <label for="user_password" class="form-label medium_space"> Password: </label>
+            <input name="user_password" class="form-control" type="password">
+
+            <!-- Submit Button -->
+
+            <button class="btn btn-outline-primary small_space"> Submit </button>
+            <br>
+            <a href="{{ url_for('Signup') }}" class="no_decoration">Signup</a>
+
+        </div>
+    </form>
 </div>
 {% endblock %}

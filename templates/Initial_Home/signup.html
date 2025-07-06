@@ -2,6 +2,35 @@
 {% block main %}
 
 <div class="new_page">
-    <h1> Signup page </h1>
+    <h1> Signup </h1>
+    <form action="signup/create_user" method="POST" class="general_form large_space">
+        <div class="mb-4">
+
+            <!-- Email Input -->
+
+            <label for="user_email" class="form-label medium_space"> Enter Email Address: </label>
+            <input name="user_email" class="form-control" type="email" placeholder="Enter your email address here...">
+            <div class="form-text"> We would never share your information with anyone! </div>
+
+            <!-- Password Input -->
+
+            <label for="user_password" class="form-label medium_space"> Enter Password: </label>
+            <input name="user_password" class="form-control" type="password" placeholder="Enter your password here...">
+
+            <!-- Password Reenter Input -->
+
+            <label for="user_reenter_password" class="form-label medium_space"> Reenter Password: </label>
+            <input name="user_reenter_password" class="form-control" type="password" placeholder="Reenter your password here...">
+
+            <!-- Submit Button -->
+
+            <button class="btn btn-outline-primary small_space center_object"> Submit </button>
+            <br>
+            <a href="{{ url_for('Login') }}" class="no_decoration center_object">Login</a>
+
+        </div>
+    </form>
 </div>
+
+
 {% endblock %}

@@ -14,9 +14,19 @@ body
     margin-right: auto;
 }
 
+.right_object
+{
+    float: right;
+}
+
 .center_text
 {
     text-align: center;
+}
+
+hr
+{
+    width: 95%;
 }
 
 /* Format */
@@ -77,6 +87,11 @@ footer
     background-color: var(--muted-color, 0.8);
 }
 
+.new_section
+{
+    padding: 10%;
+}
+
 /* Colors */
 
 .primary_text
@@ -97,4 +112,9 @@ footer
 .accent_background
 {
     background-color: var(--accent-color);
+}
+
+.primary_background
+{
+    background-color: var(--primary-color);    
 }

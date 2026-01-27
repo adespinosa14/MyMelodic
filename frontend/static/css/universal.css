@@ -17,9 +17,14 @@ body
 .center_object_vertically
 {
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: orange;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.caperr
+{
+    color: white;
 }
 
 .right_object
@@ -91,7 +96,7 @@ footer
 {
     border-color: var(--border-color);
     border-style: solid;
-    color: var(--muted-color);
+    color: var(--primary-color);
     background-color: var(--muted-color, 0.8);
 }
 
@@ -104,7 +109,8 @@ footer
 {
     padding-left: 10%;
     padding-right: 10%;
-    padding-top: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 
     background-color: var(--background-secondary-color);
 }
@@ -140,4 +146,9 @@ footer
 .primary_background
 {
     background-color: var(--primary-color);    
+}
+
+.primary_secondary_background
+{
+    background-color: var(--background-secondary-color);
 }

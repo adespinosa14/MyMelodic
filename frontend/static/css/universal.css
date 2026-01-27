@@ -14,6 +14,14 @@ body
     margin-right: auto;
 }
 
+.center_object_vertically
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+
 .right_object
 {
     float: right;
@@ -90,6 +98,21 @@ footer
 .new_section
 {
     padding: 10%;
+}
+
+.new_section_secondary
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+
+    background-color: var(--background-secondary-color);
+}
+
+.card:hover
+{
+    box-shadow: 0px 0px 5px 0px #00000033;
+    transition: 0.3s;
 }
 
 /* Colors */

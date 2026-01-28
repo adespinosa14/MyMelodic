@@ -29,7 +29,8 @@ body
 
 .right_object
 {
-    float: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .center_text
@@ -47,7 +48,7 @@ hr
 .nav_background
 {
     background-color: var(--muted-color);
-    opacity: 0.8;
+    opacity: 0.95;
 }
 
 .hero

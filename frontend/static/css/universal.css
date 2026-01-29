@@ -22,11 +22,6 @@ body
     background-color: var(--primary-color);
 }
 
-.caperr
-{
-    color: white;
-}
-
 .right_object
 {
     display: flex;
@@ -45,6 +40,11 @@ hr
 
 /* Format */
 
+.new_page
+{
+    padding: 1vw;
+}
+
 .nav_background
 {
     background-color: var(--muted-color);
@@ -54,8 +54,21 @@ hr
 .hero
 {
     background-color: var(--primary-color);
-    padding: 10%;
-    margin: 0px;
+    width: 100%;
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav_center
+{
+    position: absolute;
+    left: 49%;
+    transform: translateX(-50%);
 }
 
 footer

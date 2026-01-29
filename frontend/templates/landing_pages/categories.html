@@ -1,0 +1,16 @@
+{% extends 'landing_template.html' %}
+
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<link rel="stylesheet" href="../../../../static/css/universal.css">
+<link rel="stylesheet" href="../../../../static/CSS/temp_one.css">
+<div class="new_page">
+    <h1> {{ category_name }} </h1>
+    <br>
+    {% for article in article_list %}
+    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category_name}}/{{article}}"> {{ article }} </a>
+    <br>
+    {% endfor %}
+</div>
+
+{% endblock content %}

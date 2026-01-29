@@ -5,7 +5,7 @@
     <h1> {{ family_name }} </h1>
     <br>
     {% for instrument in instrument_list %}
-    <a class="btn primary_text accent_background button_hover_harsh center_object" href="#"> {{ instrument }} </a>
+    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument}}"> {{ instrument }} </a>
     <br>
     {% endfor %}
 </div>

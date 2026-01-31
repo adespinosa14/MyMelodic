@@ -13,11 +13,16 @@
     <br>
     
     <div class="container">
-        <div class="row">
-            {% for instrument in instrument_list %}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for i in range(instrument_list|length) %}
             <div class="col-lg-4">
                 <div class="card">
-                    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument}}"> {{ instrument }} </a>
+                    <img src="/static/images/{{instrument_list[i]}}/{{instrument_list[i]}}_card.jpg" class="card-img-top card_img_cover">
+                    <br>
+                    <h2> {{instrument_list[i]}} </h2>
+                    <p> {{bio_list[i]}} </p>
+                    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_list[i]}}"> Learn More </a>
+                    <br>
                 </div>
             </div>
             {% endfor %}

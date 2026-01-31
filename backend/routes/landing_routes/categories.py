@@ -12,7 +12,9 @@ def register_categories(app):
             abort(404)
         
         articles = []
+        article_names = []
         for article in os.listdir(directory):
             articles.append(article)
+            article_names.append(article.replace("_", " ").replace(".md", ""))
 
-        return render_template('landing_pages/categories.html', family_name=family, instrument_name=instrument, category_name=category, article_list=articles)
+        return render_template('landing_pages/categories.html', family_name=family, instrument_name=instrument, category_name=category, article_list=articles, article_name_list=article_names)

@@ -16,4 +16,4 @@ def register_article(app):
 
         html = markdown.markdown(md_text, extensions=['fenced_code', 'tables'])
 
-        return render_template('landing_pages/article.html', family_name=family, instrument_name=instrument, category_name=category, article_name=article, article=html)
+        return render_template('landing_pages/article.html', family_name=family, instrument_name=instrument, category_name=category, article_name=article.replace("_", " ").replace(".md", ""), article=html)

@@ -5,12 +5,24 @@
 <link rel="stylesheet" href="../../static/css/universal.css">
 <link rel="stylesheet" href="../../static/CSS/temp_one.css">
 <div class="new_page">
+    <nav aria-label="breadcrumb"> 
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"> <a href="{{ url_for('Home') }}"> Home </a>  </li>
+            <li class="breadcrumb-item"> <a href="/instrument_family/{{family_name}}"> {{ family_name }} </a>  </li>
+            <li class="breadcrumb-item active"> {{ instrument_name }} </li>
+        </ol>
+    </nav>
     <h1> {{ instrument_name }} </h1>
     <br>
-    {% for category in category_list %}
-    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category}}"> {{ category }} </a>
-    <br>
-    {% endfor %}
+    {% if category_list %}
+        {% for category in category_list %}
+        <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category}}"> {{ category }} </a>
+        <br>
+        {% endfor %}
+
+        {% else %}
+        <h1 class="center_text"> Coming Soon </h1>
+    {% endif %}
 </div>
 
 {% endblock content %}

@@ -14,6 +14,8 @@ No matter the brand of reeds you get, It's always best practice to break-in each
 When a reed has sat for a day, do ***not*** play on it like a regular practice reed. Since reeds are made of a natural material, when they vibrate the threads inside of the reed could get damaged or wear down very quickly. This dramatically lowers the life span of that reed. Instead, play on the reed for about 5 minutes, then stop to let it rest and dry. When setting the reed to dry, set it upside down, so the most moistened part can set lowering the possibility of **warping**. Once dry, play again for 10 minutes, then 20 minutes, then an hour. It is very common to use this time to practice scales and work on multiple reeds at once. Once this is complete, you may start practicing on it like normal.
 
 ---
+author: Andrew Espinosa
+<br>
 title: Reed Health Basics
 <br>
 slug: reed-health-basics

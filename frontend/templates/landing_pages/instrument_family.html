@@ -11,10 +11,19 @@
 
     <h1> {{ family_name }} </h1>
     <br>
-    {% for instrument in instrument_list %}
-    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument}}"> {{ instrument }} </a>
+    
+    <div class="container">
+        <div class="row">
+            {% for instrument in instrument_list %}
+            <div class="col-lg-4">
+                <div class="card">
+                    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument}}"> {{ instrument }} </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     <br>
-    {% endfor %}
 </div>
 
 {% endblock content %}

@@ -12,8 +12,18 @@ def register_instrument(app):
         if not os.path.exists(directory):
             abort(404)
 
-        categories = []
-        for category in os.listdir(directory):
-            categories.append(category)
+        categories = fill_categories(directory)
 
-        return render_template('landing_pages/instrument.html', family_name=family, instrument_name=instrument, category_list=categories)
+        return render_template('landing_pages/instrument.html', 
+                               family_name=family, 
+                               instrument_name=instrument, 
+                               category_list=categories)
+    
+## Helper
+
+def fill_categories(directory):
+    categories = []
+    for category in os.listdir(directory):
+        categories.append(category)
+
+    return categories

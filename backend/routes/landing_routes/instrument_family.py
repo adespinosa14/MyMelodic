@@ -3,7 +3,9 @@ import os
 import requests
 
 def register_instrument_family(app):
-    
+
+    ## Main Routing
+
     @app.route("/instrument_family/<family>")
     def instrument_family(family):
         family_name = os.path.join(current_app.root_path, 'content', family)
@@ -11,25 +13,36 @@ def register_instrument_family(app):
         if not os.path.exists(family_name):
             abort(404)
 
-        instruments = []
+        instruments = fill_instrument_list(family_name)
+        instrument_bio = fill_bio_list(instruments)
 
-        for instrument in os.listdir(family_name):
-            instruments.append(instrument)
+        return render_template("landing_pages/instrument_family.html", 
+                               family_name=family, 
+                               instrument_list=instruments, 
+                               bio_list=instrument_bio)
 
+## Helper
 
-        
-        instrument_bio = []
-        
-        for i in instruments:
-            url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{i.lower()}"
-            
-            request = requests.get(url)
-            if request.status_code == 200:
-                posts = request.json()
+def fill_instrument_list(family_name_list):
+    instruments = []
+    for instrument in os.listdir(family_name_list):
+        instruments.append(instrument)
+    
+    return instruments
 
-            bio = posts[0]['meanings'][0]['definitions'][0]['definition']
-            instrument_bio.append(bio)
+def fill_bio_list(instruments):
+    instrument_bio = []
+    for i in instruments:
+        url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{i.lower()}"
+        instrument_bio.append(dictionary_api(url))
+    
+    return instrument_bio
 
-        print(instrument_bio)
+def dictionary_api(url):
+                
+    request = requests.get(url)
+    if request.status_code == 200:
+        posts = request.json()
 
-        return render_template("landing_pages/instrument_family.html", family_name=family, instrument_list=instruments, bio_list=instrument_bio)
+    bio = posts[0]['meanings'][0]['definitions'][0]['definition']
+    return bio

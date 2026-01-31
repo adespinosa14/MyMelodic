@@ -11,10 +11,17 @@ def register_categories(app):
         if not os.path.exists(directory):
             abort(404)
         
-        articles = []
-        article_names = []
-        for article in os.listdir(directory):
-            articles.append(article)
-            article_names.append(article.replace("_", " ").replace(".md", ""))
+        articles, article_names = fill_articles(directory)
 
         return render_template('landing_pages/categories.html', family_name=family, instrument_name=instrument, category_name=category, article_list=articles, article_name_list=article_names)
+    
+# Helper
+
+def fill_articles(directory):
+    articles = []
+    article_names = []
+    for article in os.listdir(directory):
+        articles.append(article)
+        article_names.append(article.replace("_", " ").replace(".md", ""))
+
+    return articles, article_names

@@ -1,5 +1,6 @@
 from flask import render_template, abort, current_app
 import os
+from backend.database.supabase import db
 
 def register_instrument(app):
     
@@ -13,6 +14,14 @@ def register_instrument(app):
             abort(404)
 
         categories = fill_categories(directory)
+
+        find_instrument_id = (db.table('instruments').select('id').eq("name", instrument).execute())
+        instrument_id = find_instrument_id.data[0]['id']
+        
+        find_categories = db.table('categories').select('*, category_types(Name)').execute()
+        the_categories = find_categories.data[0]['category_types']['Name']
+        
+        
 
         return render_template('landing_pages/instrument.html', 
                                family_name=family, 

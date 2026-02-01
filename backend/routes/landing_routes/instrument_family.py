@@ -1,6 +1,7 @@
 from flask import render_template, abort, current_app
 import os
 import requests
+from backend.database.supabase import db
 
 def register_instrument_family(app):
 
@@ -8,41 +9,18 @@ def register_instrument_family(app):
 
     @app.route("/instrument_family/<family>")
     def instrument_family(family):
-        family_name = os.path.join(current_app.root_path, 'content', family)
 
-        if not os.path.exists(family_name):
-            abort(404)
-
-        instruments = fill_instrument_list(family_name)
-        instrument_bio = fill_bio_list(instruments)
+        response = (db.table('instruments').select('*').eq('family', family).execute())
+        instruments = response.data
+        instrument = []
+        instrument_bio = []
+        for i in range(len(instruments)):
+            instrument.append(instruments[i]['name'])
+            instrument_bio.append(instruments[i]['description'])
 
         return render_template("landing_pages/instrument_family.html", 
                                family_name=family, 
-                               instrument_list=instruments, 
+                               instrument_list=instrument, 
                                bio_list=instrument_bio)
 
 ## Helper
-
-def fill_instrument_list(family_name_list):
-    instruments = []
-    for instrument in os.listdir(family_name_list):
-        instruments.append(instrument)
-    
-    return instruments
-
-def fill_bio_list(instruments):
-    instrument_bio = []
-    for i in instruments:
-        url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{i.lower()}"
-        instrument_bio.append(dictionary_api(url))
-    
-    return instrument_bio
-
-def dictionary_api(url):
-                
-    request = requests.get(url)
-    if request.status_code == 200:
-        posts = request.json()
-
-    bio = posts[0]['meanings'][0]['definitions'][0]['definition']
-    return bio

@@ -17,7 +17,7 @@
             {% for i in range(instrument_list|length) %}
             <div class="col-lg-4">
                 <div class="card">
-                    <img src="/static/images/{{instrument_list[i]}}/{{instrument_list[i]}}_card.jpg" class="card-img-top card_img_cover">
+                    <img src="https://ouaeswxhnibgvlthhgzx.supabase.co/storage/v1/object/public/Image%20Assets/{{instrument_list[i]|lower}}_card.jpg" class="card-img-top card_img_cover">
                     <br>
                     <h2> {{instrument_list[i]}} </h2>
                     <p> {{bio_list[i]}} </p>

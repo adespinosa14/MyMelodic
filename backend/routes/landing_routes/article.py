@@ -8,10 +8,10 @@ def register_article(app):
     @app.route("/instrument_family/<family>/<instrument>/<category>/<article>")
 
     def article(family, instrument, category, article):
+        new_article = article.replace(' ', '_')
+        url = f'/instrument_family/{family}/{instrument}/{category}/{new_article}'
 
-        category_response = (db.table('category').select(''))
-
-        response = (db.table('articles').select('content').execute())
+        response = (db.table('articles').select('*').eq('slug', f'{url}').execute())
         article_content = response.data[0]['content']
 
         html = convert_to_html(article_content)

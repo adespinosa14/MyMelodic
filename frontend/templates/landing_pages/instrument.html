@@ -21,10 +21,10 @@
                 {% for category in category_list %}
                     <div class="col-lg-4">
                         <div class="card">
-                            <div class="card-header muted_text center_text"> {{category}} </div>
+                            <div class="card-header muted_text center_text"> {{category.Name}} </div>
                             <div class="card-body">
                                 <p> Lorem Ipsum </p>
-                                <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category}}"> Learn More </a>
+                                <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category.Name}}"> Learn More </a>
                                 <br>
                             </div>
                         </div>

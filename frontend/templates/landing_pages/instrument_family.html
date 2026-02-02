@@ -14,14 +14,14 @@
     
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for i in range(instrument_list|length) %}
+            {% for instrument in instrument_list %}
             <div class="col-lg-4">
                 <div class="card">
-                    <img src="https://ouaeswxhnibgvlthhgzx.supabase.co/storage/v1/object/public/Image%20Assets/{{instrument_list[i]|lower}}_card.jpg" class="card-img-top card_img_cover">
+                    <img src="https://ouaeswxhnibgvlthhgzx.supabase.co/storage/v1/object/public/Image%20Assets/{{instrument.name|lower}}_card.jpg" class="card-img-top card_img_cover">
                     <br>
-                    <h2> {{instrument_list[i]}} </h2>
-                    <p> {{bio_list[i]}} </p>
-                    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_list[i]}}"> Learn More </a>
+                    <h2> {{instrument.name}} </h2>
+                    <p> {{instrument.description}} </p>
+                    <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument.name | replace(' ', '_')}}"> Learn More </a>
                     <br>
                 </div>
             </div>

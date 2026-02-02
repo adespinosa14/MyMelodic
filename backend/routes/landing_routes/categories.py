@@ -7,7 +7,7 @@ def register_categories(app):
     @app.route("/instrument_family/<family>/<instrument>/<category>")
 
     def category(family, instrument, category):
-        response = db.table('categories').select('*, articles(title), category_types(Name)').eq('category_types.Name', f'{category}').execute()
+        response = db.table('categories').select('*, articles(title), instruments!inner(name), category_types!inner(Name)').eq('category_types.Name', category).eq('instruments.name', instrument).execute()
         articles = response.data
 
         article_list = []

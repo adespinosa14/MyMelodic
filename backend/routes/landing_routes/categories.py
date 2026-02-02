@@ -15,6 +15,5 @@ def register_categories(app):
         for i in articles:
             if i['category_types'] is not None:
                 article_list.append(i['articles']['title'])
-                print("RAN")
 
         return render_template('landing_pages/categories.html', family_name=family, instrument_name=instrument, category_name=category, articles=article_list)

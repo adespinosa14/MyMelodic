@@ -12,6 +12,9 @@ def register_article(app):
         url = f'/instrument_family/{family}/{instrument}/{category}/{new_article}'
 
         response = (db.table('articles').select('*').eq('slug', f'{url}').execute())
+        if not response.data:
+            abort(404)
+            
         article_content = response.data[0]['content']
 
         html = convert_to_html(article_content)

@@ -129,6 +129,12 @@ footer
     background-color: var(--secondary-color);
 }
 
+.disable_link
+{
+    pointer-events: none;
+    opacity: 0.50;
+}
+
 /* Card Trats */
 
 .card_img_cover

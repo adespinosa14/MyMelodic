@@ -18,17 +18,19 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% if articles %}
-            {% for i in range(articles|length) %}
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header muted_text center_text"> {{ articles[i] }} </div>
-                    <div class="card-body">
-                        <p1> Lorem Ipsum </p1>
-                        <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category_name}}/{{articles[i]}}"> Learn More </a>
+                {% for i in range(articles|length) %}
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header muted_text center_text"> {{ articles[i].title }} </div>
+                        <div class="card-body">
+                            <p1> {{articles[i].summary}} </p1>
+                            <br>
+                            <br>
+                            <a class="btn primary_text accent_background button_hover_harsh center_object" href="/instrument_family/{{family_name}}/{{instrument_name}}/{{category_name}}/{{articles[i].title}}"> Learn More </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
             {% endif %}
         </div>
     </div>

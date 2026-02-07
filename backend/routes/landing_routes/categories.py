@@ -1,4 +1,4 @@
-from flask import render_template, abort, current_app
+from flask import render_template
 from backend.database.supabase import db
 import os
 

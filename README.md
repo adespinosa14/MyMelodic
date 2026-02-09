@@ -6,6 +6,7 @@ Instead of focusing on practice tracking or accounts first, MyMelodic prioritize
 **Family → Instrument → Category → Article**
 
 This project is currently an MVP built with Flask and Supabase.
+This is just the beginning to this project. It wil be updated constantly over time.
 
 ---
 
@@ -35,10 +36,7 @@ This project is currently an MVP built with Flask and Supabase.
 - Markdown
 
 ### Frontend
+- HTML5
 - Jinja2 templates
 - Bootstrap 5
-- Custom CSS (CSS variables + utility classes)
-
----
-
-
+- CSS3

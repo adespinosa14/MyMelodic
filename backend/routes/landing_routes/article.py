@@ -9,7 +9,9 @@ def register_article(app):
 
     def article(family, instrument, category, article):
         new_article = article.replace(' ', '_')
+
         url = f'/instrument_family/{family}/{instrument}/{category}/{new_article}'
+        print(url)
 
         response = (db.table('articles').select('*').eq('slug', f'{url}').execute())
         if not response.data:

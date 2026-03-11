@@ -1,0 +1,47 @@
+{% extends 'landing_template.html' %}
+
+{% block content %}
+<div class="new_page">
+    <h1> Login/Signup </h1>
+
+<!-- Tabs -->
+ <div class="paper">
+    <ul class="nav nav-tabs justify-content-center " id="authTabs">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#login">Sign In</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#signup">Create Account</button>
+        </li>
+    </ul>
+
+    <!-- Tab content -->
+    <div class="tab-content mx-3 primary_secondary_background">
+
+        <div class="tab-pane fade show active form_paper" id="login">
+        <!-- login form -->
+         <h2> Welcome Back! </h2>
+         <p> Sign in to your MyMelodic account </p>
+            <form>
+                <label for="input_email" class="form-label"> Email: </label>
+                <input class="form-control" id="input_email" input="email" placeholder="Enter Email Here...">
+                <br>
+                
+                <label for="input_password" class="form-label"> Password: </label>
+                <input class="form-control" id="input_password" type="password" placeholder="Enter Password Here...">
+                <br>
+
+                <button class="btn accent_background primary_text center_object" type="submit"> Submit </button>
+                <p class="center_text"> <a class="primary_text no_decoration" href="#"> Sign Up </a> </p>
+            </form>
+        </div>
+
+        <div class="tab-pane fade show form_paper" id="signup">
+            <!-- signup form -->
+             <h2> Welcome to MyMelodic! </h2>
+             <p> We're so excited you're joining us in this journey! </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

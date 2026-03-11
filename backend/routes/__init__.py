@@ -5,6 +5,7 @@ from .landing_routes.instrument import register_instrument
 from .landing_routes.categories import register_categories
 from .landing_routes.article import register_article
 from .landing_routes.contact_me import register_contact_me
+from .landing_routes.login import register_login
 
 def register_routes(app):
     register_index(app)
@@ -13,3 +14,4 @@ def register_routes(app):
     register_categories(app)
     register_article(app)
     register_contact_me(app)
+    register_login(app)

@@ -38,6 +38,18 @@ hr
     width: 95%;
 }
 
+.paper
+{
+    margin-left: 15vw;
+    margin-right: 15vw;
+    border-radius: 20px;
+}
+
+.form_paper
+{
+    padding: 20px;
+}
+
 /* Format */
 
 .new_page
@@ -48,7 +60,6 @@ hr
 .nav_background
 {
     background-color: var(--muted-color);
-    opacity: 0.95;
 }
 
 .hero
@@ -62,13 +73,6 @@ hr
     justify-content: center;
     align-items: center;
 
-}
-
-.nav_center
-{
-    position: absolute;
-    left: 49%;
-    transform: translateX(-50%);
 }
 
 footer
@@ -133,6 +137,11 @@ footer
 {
     pointer-events: none;
     opacity: 0.50;
+}
+
+.no_decoration
+{
+    text-decoration: none;
 }
 
 /* Card Trats */

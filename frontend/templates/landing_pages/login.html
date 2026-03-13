@@ -1,43 +1,196 @@
 {% extends 'landing_template.html' %}
 
 {% block content %}
-<div class="new_page">
-    <h1 class="mb-4"> Login / Signup </h1>
+<div class="auth_page">
+    <div class="auth_card">
 
-    <div class="paper">
-        <ul class="nav nav-tabs justify-content-center" id="authTabs">
-            <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#login"> Sign In </button>
+        <!-- Branding Header -->
+        <div class="auth_header primary_background">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F5A506" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <h2 class="auth_brand_title"> My Melodic </h2>
+            <p class="auth_brand_sub"> Your music education resource </p>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="nav auth_tabs" id="authTabs">
+            <li class="nav-item flex-fill">
+                <button class="nav-link auth_tab active w-100" data-bs-toggle="tab" data-bs-target="#login"> Sign In </button>
             </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#signup"> Create Account </button>
+            <li class="nav-item flex-fill">
+                <button class="nav-link auth_tab w-100" data-bs-toggle="tab" data-bs-target="#signup"> Create Account </button>
             </li>
         </ul>
 
-        <div class="tab-content primary_secondary_background">
+        <!-- Tab Content -->
+        <div class="tab-content auth_body">
 
-            <div class="tab-pane fade show active form_paper" id="login">
-                <h2 class="mb-1"> Welcome Back! </h2>
-                <p class="mb-4"> Sign in to your MyMelodic account </p>
+            <div class="tab-pane fade show active" id="login">
+                <h3 class="mb-1"> Welcome Back! </h3>
+                <p class="auth_sub mb-4"> Sign in to your MyMelodic account </p>
                 <form>
-                    <label for="input_email" class="form-label"> Email </label>
-                    <input class="form-control mb-3" id="input_email" type="email" placeholder="Enter email...">
+                    <label for="input_email" class="form-label auth_label"> Email </label>
+                    <input class="form-control auth_input mb-3" id="input_email" type="email" placeholder="Enter email...">
 
-                    <label for="input_password" class="form-label"> Password </label>
-                    <input class="form-control mb-4" id="input_password" type="password" placeholder="Enter password...">
+                    <label for="input_password" class="form-label auth_label"> Password </label>
+                    <input class="form-control auth_input mb-4" id="input_password" type="password" placeholder="Enter password...">
 
-                    <button class="btn accent_background primary_text center_object" type="submit"> Sign In </button>
-                    <p class="center_text mt-3"> <a class="primary_text no_decoration" href="#"> Create an account </a> </p>
+                    <button class="btn accent_background primary_text auth_submit" type="submit"> Sign In </button>
                 </form>
             </div>
 
-            <div class="tab-pane fade form_paper" id="signup">
-                <h2 class="mb-1"> Welcome to MyMelodic! </h2>
-                <p> We're so excited you're joining us in this journey! </p>
+            <div class="tab-pane fade" id="signup">
+                <h3 class="mb-1"> Welcome to MyMelodic! </h3>
+                <p class="auth_sub mb-4"> We're so excited you're joining us in this journey! </p>
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="signup_first_name" class="form-label auth_label"> First Name </label>
+                            <input class="form-control auth_input" id="signup_first_name" type="text" placeholder="First name...">
+                        </div>
+                        <div class="col">
+                            <label for="signup_last_name" class="form-label auth_label"> Last Name </label>
+                            <input class="form-control auth_input" id="signup_last_name" type="text" placeholder="Last name...">
+                        </div>
+                    </div>
+
+                    <label for="signup_email" class="form-label auth_label"> Email </label>
+                    <input class="form-control auth_input mb-3" id="signup_email" type="email" placeholder="Enter email...">
+
+                    <label for="signup_password" class="form-label auth_label"> Password </label>
+                    <input class="form-control auth_input mb-3" id="signup_password" type="password" placeholder="Create a password...">
+
+                    <label for="signup_confirm_password" class="form-label auth_label"> Confirm Password </label>
+                    <input class="form-control auth_input mb-4" id="signup_confirm_password" type="password" placeholder="Confirm your password...">
+
+                    <button class="btn accent_background primary_text auth_submit" type="submit"> Create Account </button>
+                </form>
             </div>
 
         </div>
     </div>
 </div>
+
+<style>
+.auth_page {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.auth_card {
+    width: 100%;
+    max-width: 460px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.auth_header {
+    padding: 36px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth_brand_title {
+    color: #FDFCFA;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.auth_brand_sub {
+    color: rgba(253, 252, 250, 0.55);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.auth_tabs {
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-warm);
+}
+
+.auth_tab {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: var(--navy);
+    font-weight: 500;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, border-bottom-color 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.auth_tab:hover {
+    opacity: 0.75;
+    background: none;
+    color: var(--navy);
+}
+
+.auth_tab.active {
+    opacity: 1;
+    color: var(--navy);
+    background: none;
+    border-bottom: 3px solid var(--gold);
+}
+
+.auth_body {
+    padding: 32px;
+    background-color: var(--bg-card);
+}
+
+.auth_sub {
+    color: #6b6560;
+    font-size: 0.9rem;
+}
+
+.auth_label {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+}
+
+.auth_input {
+    background-color: var(--bg-base);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--navy);
+    padding: 10px 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth_input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(245, 165, 6, 0.15);
+    background-color: var(--bg-base);
+    color: var(--navy);
+    outline: none;
+}
+
+.auth_input::placeholder {
+    color: #b0aa9f;
+}
+
+.auth_submit {
+    width: 100%;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.auth_submit:hover {
+    box-shadow: 0 0 18px rgba(245, 165, 6, 0.35);
+    transform: translateY(-1px);
+}
+</style>
 
 {% endblock %}

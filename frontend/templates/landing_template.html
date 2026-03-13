@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM8SV9M7NL"></script>
@@ -6,66 +7,59 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-XM8SV9M7NL');
         </script>
-        
-      <title> My Melodic </title>
+
+        <title> My Melodic </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/css/universal.css">
-        <link rel="stylesheet" href="../static/CSS/temp_one.css">
-        <title> Home </title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}">
     </head>
 
-    <!-- Body -->
-
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
         <!-- Navigation Bar -->
         <nav class="navbar sticky-top navbar-expand-lg nav_background">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/"> My Melodic </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <!-- Navigation Links Start -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact_me') }}"> <button class="btn button-item"> Contact Me </button> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#families"> <button class="btn button-item"> Families </button> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#about"> <button class="btn button-item"> About </button> </a>
-                    </li>
-                </ul>
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-semibold primary_text" href="/"> My Melodic </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link primary_text" href="{{ url_for('contact_me') }}"> Contact Me </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link primary_text" href="/#families"> Families </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link primary_text" href="/#about"> About </a>
+                        </li>
+                    </ul>
 
-                <!-- <div class="nav-item d-flex">
-                    <a class="nav-link" href="{{ url_for('login') }}"> <button class="btn auth_button"> Login/Signup </button> </a>
-                </div> -->
-               
-                  <!-- Navigation Links End -->
-
-              </div>
+                    <!-- <div class="nav-item d-flex">
+                        <a class="nav-link" href="{{ url_for('login') }}"> <button class="btn auth_button"> Login/Signup </button> </a>
+                    </div> -->
+                </div>
             </div>
-          </nav>
+        </nav>
 
         <!-- Page Contents -->
-         {% block content %}
+        {% block content %}
         <div></div>
         {% endblock %}
 
-    </body>
+        <!-- Footer -->
+        <hr class="center_object">
+        <footer>
+            <p class="mb-0"> My Melodic &copy; 2026 &nbsp;&mdash;&nbsp; Made with
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#F5A506" stroke="#F5A506" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                for music education
+            </p>
+        </footer>
 
-    <!-- Footer -->
-     <hr class="center_object">
-    <footer>
-        <div class="display: inline-block;">
-            <p> My Melodic @2026 <span class="right_object"> Made with <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#F5A506" stroke="#F5A506" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/> </svg> for music education </span></p>
-        </div>
-    </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    </body>
 </html>

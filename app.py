@@ -10,5 +10,13 @@ app = Flask(__name__, template_folder=template_directory, static_folder=static_d
 
 register_routes(app)
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("errors/404.html"), 404
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("errors/500.html"), 500
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

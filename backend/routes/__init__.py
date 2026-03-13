@@ -1,4 +1,3 @@
-from flask import app
 from .landing_routes.index import register_index
 from .landing_routes.instrument_family import register_instrument_family
 from .landing_routes.instrument import register_instrument

@@ -1,11 +1,28 @@
 @import 'colors.css';
-body
+
+/* ── Base ────────────────────────────────────────────────── */
+
+html
 {
-    background-color: var(--background-color);
-    font-family: Georgia;
+    background-color: var(--bg-base);
 }
 
-/* Element Alignment */
+body
+{
+    background-color: var(--bg-base);
+    font-family: 'Inter', sans-serif;
+    color: var(--navy);
+    line-height: 1.75;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* ── Alignment ───────────────────────────────────────────── */
 
 .center_object
 {
@@ -19,7 +36,6 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-color);
 }
 
 .right_object
@@ -36,107 +52,138 @@ body
 hr
 {
     width: 95%;
+    border-color: var(--border);
+    opacity: 1;
 }
+
+/* ── Layout ──────────────────────────────────────────────── */
 
 .paper
 {
     margin-left: 15vw;
     margin-right: 15vw;
-    border-radius: 20px;
 }
 
 .form_paper
 {
-    padding: 20px;
+    padding: 28px;
 }
-
-/* Format */
 
 .new_page
 {
-    padding: 1vw;
+    padding: 28px 32px;
 }
+
+/* ── Navigation ──────────────────────────────────────────── */
 
 .nav_background
 {
-    background-color: var(--muted-color);
+    background-color: var(--bg-base);
+    border-bottom: 1px solid var(--border);
 }
+
+@media (min-width: 992px)
+{
+    .nav_background .navbar-nav
+    {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
 
 .hero
 {
-    background-color: var(--primary-color);
+    background-color: var(--navy);
     width: 100%;
-    min-height: 90vh;
-
+    min-height: 88vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-
-footer
-{
-    padding: 3%;
-    margin: 0px;
-}
-
-.hero_popup
-{
-    display: inline-block;
-    padding: 7px;
-    font-size: 16px;
-    border-color: var(--accent-color);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 30px;
-    background-color: var(--accent-muted-color);
+    gap: 20px;
+    padding: 60px 20px;
 }
 
 .hero_text
 {
-    width: 75%;
+    width: 58%;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.hero_popup
+{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background-color: var(--gold-faint);
+    color: var(--gold);
+    letter-spacing: 0.03em;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+footer
+{
+    padding: 24px;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+
+.button_hover_harsh
+{
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .button_hover_harsh:hover
 {
-    box-shadow: 0px 0px 10px 0px #FFFFFF33;
-    background-color: var(--accent-color);
+    background-color: var(--gold);
+    box-shadow: 0 0 18px rgba(245, 165, 6, 0.30);
+    transform: translateY(-1px);
 }
 
 .soft_button
 {
-    border-color: var(--border-color);
-    border-style: solid;
+    border: 1px solid var(--border);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .soft_button:hover
 {
-    border-color: var(--border-color);
-    border-style: solid;
-    color: var(--primary-color);
-    background-color: var(--muted-color, 0.8);
+    color: var(--navy);
+    background-color: var(--bg-muted);
 }
+
+/* ── Sections ────────────────────────────────────────────── */
 
 .new_section
 {
-    padding: 10%;
+    padding: 80px 10%;
 }
 
 .new_section_secondary
 {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-
-    background-color: var(--secondary-color);
+    padding: 60px 10%;
+    background-color: var(--bg-warm);
 }
+
+/* ── Utilities ───────────────────────────────────────────── */
 
 .disable_link
 {
     pointer-events: none;
-    opacity: 0.50;
+    opacity: 0.45;
 }
 
 .no_decoration
@@ -144,60 +191,69 @@ footer
     text-decoration: none;
 }
 
-/* Card Trats */
+/* ── Cards ───────────────────────────────────────────────── */
 
 .card_img_cover
 {
     width: 100%;
     height: 200px;
-    object-fit:contain;
+    object-fit: cover;
 }
+
 .card
 {
-    padding: 10px;
-    background-color: var(--card-background-color);
-    border-radius: 20px;
+    --bs-card-bg:            var(--bg-card);
+    --bs-card-border-color:  var(--border);
+    --bs-card-border-radius: 12px;
+
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
 }
 
 .card-header
 {
-    background-color: var(--primary-color)
+    background-color: var(--navy);
+    border-bottom: none;
+    padding: 12px 16px;
+}
+
+.card-body
+{
+    padding: 20px;
 }
 
 .card:hover
 {
-    box-shadow: 0px 0px 5px 0px #00000033;
-    transition: 0.3s;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
 }
 
-/* Colors */
+/* ── Category Tiles ──────────────────────────────────────── */
 
-.primary_text
+.category_tile
 {
-    color: var(--primary-color);
+    border-left: 3px solid var(--navy) !important;
 }
 
-.accent_text
+.category_tile:hover
 {
-    color: var(--accent-color);
+    border-left-color: var(--navy) !important;
 }
 
-.muted_text
+/* ── Article Typography ──────────────────────────────────── */
+
+.article
 {
-    color: var(--muted-color);
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
-.accent_background
-{
-    background-color: var(--accent-color);
-}
+/* ── Colors ──────────────────────────────────────────────── */
 
-.primary_background
-{
-    background-color: var(--primary-color);    
-}
-
-.primary_secondary_background
-{
-    background-color: var(--secondary-color);
-}
+.primary_text                 { color: var(--navy); }
+.accent_text                  { color: var(--gold); }
+.muted_text                   { color: var(--bg-muted); }
+.accent_background            { background-color: var(--gold); }
+.primary_background           { background-color: var(--navy); }
+.primary_secondary_background { background-color: var(--bg-warm); }

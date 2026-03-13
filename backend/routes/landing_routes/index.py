@@ -1,6 +1,4 @@
-from flask import render_template, abort, current_app
-import markdown
-import os
+from flask import render_template
 
 def register_index(app):
     @app.route("/")

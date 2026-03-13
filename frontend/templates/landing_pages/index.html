@@ -1,182 +1,162 @@
 {% extends "landing_template.html" %}
 {% block content %}
 
-<div class="">
-    <div class="hero">
-        <div class="center_text">
-            <p class="center_text accent_text hero_popup"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-icon lucide-book"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
-                Your Music Resource </p>
-        </div>
+<!-- Hero -->
+<div class="hero">
+    <p class="hero_popup">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+        Your Music Resource
+    </p>
 
-        <h1 class="muted_text center_text"> Welcome to <span class="accent_text"> My Melodic </span> </h1>
-        <br>
-        <p class="center_text center_object muted_text hero_text"> A comprehensive wiki designed to level the playing field in music education. Expert-reviewed articles on instruments, theory, and technique. </p>
-        <br>
-        <div class="center_text">
-            <a href="/#families" class="btn primary_text accent_background button_hover_harsh"> Browse Articles <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 
-                </a>
-            <a href="/#about" class="btn muted_text soft_button"> Learn More </a>
-        </div>
+    <h1 class="muted_text text-center mb-0"> Welcome to <span class="accent_text"> My Melodic </span> </h1>
+
+    <p class="muted_text hero_text"> A comprehensive wiki designed to level the playing field in music education. Expert-reviewed articles on instruments, theory, and technique. </p>
+
+    <div class="d-flex gap-3">
+        <a href="/#families" class="btn primary_text accent_background button_hover_harsh">
+            Browse Articles
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="/#about" class="btn muted_text soft_button"> Learn More </a>
+    </div>
+</div>
+
+<!-- Instrument Families -->
+<div class="new_section" id="families">
+    <div class="center_text mb-5">
+        <p class="hero_popup"> Instrument Families </p>
+        <h2 class="primary_text mt-3 mb-1"> Explore by Family </h2>
+        <p class="primary_text"> Still a work in progress adding more instruments </p>
     </div>
 
-    <!-- Instrument Type -->
-    <div class="new_section" id="families">
-        <div class="center_text">
-            <p class="center_text accent_text hero_popup"> Instrument Families </p>
-            <h2 class="center_text primary_text"> Explore by Family </h1>
-            <p class="center_text primary_text"> Still a work in progress adding more instruments </p>
-            
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-2 g-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
 
-                    <!-- Woodwinds -->
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-icon lucide-music"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                                <br>
-                                <h2 class="card-title"> Woodwinds </h2>
-                                <p class="card-text"> A diverse family of instruments that produce sound by splitting air across an edge or by vibrating a single or double reed. </p>
-                                <a href="/instrument_family/Woodwinds" class="btn center_object primary_text accent_background button_hover_harsh"> Learn more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Brass -->
-
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="center_text accent_text hero_popup"> Coming Soon </p>
-                                <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-icon lucide-music"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                                <br>
-                                <h2 class="card-title"> Brass </h2>
-                                <p class="card-text"> Also wind instruments, typically made of metal that produce sound through the vibration of a player's lips (buzzing) into a cup or funnel-shaped mouthpiece. </p>
-                                <a href="/instrument_family/Brass" class="btn center_object primary_text accent_background button_hover_harsh disable_link"> Learn more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Strings -->
-
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="center_text accent_text hero_popup"> Coming Soon </p>
-                                <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-icon lucide-music"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                                <br>
-                                <h2 class="card-title"> Strings </h2>
-                                <p class="card-text"> These instruments produce sound through the vibration of strings! The strings stretch between two points, and when plucked, bowed, or struck, they vibrate to create sound.  </p>
-                                <a href="/instrument_family/Strings" class="btn center_object primary_text accent_background button_hover_harsh disable_link"> Learn more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Percussion -->
-
-                     <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="center_text accent_text hero_popup"> Coming Soon </p>
-                                <svg class="card-img-top" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-icon lucide-music"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                                <br>
-                                <h2 class="card-title"> Percussion </h2>
-                                <p class="card-text"> A diverse family of musical instruments that create sound by being struck, shaken, scraped, or clashed together. </p>
-                                <a href="/instrument_family/Percussion" class="btn center_object primary_text accent_background button_hover_harsh disable_link"> Learn more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 
-                                    </a>
-                            </div>
-                        </div>
+            <!-- Woodwinds -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <svg class="lucide lucide-music mb-3" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <h4 class="card-title"> Woodwinds </h4>
+                        <p class="card-text"> A diverse family of instruments that produce sound by splitting air across an edge or by vibrating a single or double reed. </p>
+                        <a href="/instrument_family/Woodwinds" class="btn primary_text accent_background button_hover_harsh">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Brass -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="hero_popup mb-3"> Coming Soon </p>
+                        <svg class="lucide lucide-music mb-3" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <h4 class="card-title"> Brass </h4>
+                        <p class="card-text"> Also wind instruments, typically made of metal that produce sound through the vibration of a player's lips (buzzing) into a cup or funnel-shaped mouthpiece. </p>
+                        <a href="/instrument_family/Brass" class="btn primary_text accent_background button_hover_harsh disable_link">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strings -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="hero_popup mb-3"> Coming Soon </p>
+                        <svg class="lucide lucide-music mb-3" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <h4 class="card-title"> Strings </h4>
+                        <p class="card-text"> These instruments produce sound through the vibration of strings. The strings stretch between two points, and when plucked, bowed, or struck, they vibrate to create sound. </p>
+                        <a href="/instrument_family/Strings" class="btn primary_text accent_background button_hover_harsh disable_link">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Percussion -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="hero_popup mb-3"> Coming Soon </p>
+                        <svg class="lucide lucide-music mb-3" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <h4 class="card-title"> Percussion </h4>
+                        <p class="card-text"> A diverse family of musical instruments that create sound by being struck, shaken, scraped, or clashed together. </p>
+                        <a href="/instrument_family/Percussion" class="btn primary_text accent_background button_hover_harsh disable_link">
+                            Learn more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
 
-    <!-- About Us -->
+<!-- About / Our Mission -->
+<div class="new_section_secondary" id="about">
+    <p class="hero_popup"> Our Mission </p>
 
-    <div class="new_section_secondary" id="about">
-        <p class="accent_text hero_popup"> Our Mission </p>
+    <div class="container mt-4">
+        <div class="row g-5 align-items-start">
 
-        <div class="container">
-            <div class="row">
+            <!-- About Text -->
+            <div class="col-lg-6">
+                <h2> Leveling the Playing Field in <span class="accent_text"> Music Education </span> </h2>
+                <p> From 4th grade through earning a Bachelor's of Music in Clarinet Performance at the
+                    University of Redlands, I witnessed firsthand the vast disparities in music education. </p>
+                <p> Students come from incredibly diverse backgrounds, some with years of formal training,
+                    others with significant gaps in their musical knowledge. What they learn can vary
+                    drastically, leaving many without a solid "middle-ground" understanding. </p>
+                <p> My mission is to create a comprehensive resource where everyone can find what they need
+                    to grow, regardless of their starting point. </p>
+            </div>
 
-                <!-- About Text -->
-                <div class="col-lg-6">
-                    <h2> Leveling the Playing Field in <span class=".accent_text"> Music Education </span> </h2>
-                    <p> From 4th grade through earning a Bachelor's of Music in Clarinet Performance at the 
-                        University of Redlands, I witnessed firsthand the vast disparities in music education. </p>
-                    
-                    <p> Students come from incredibly diverse backgrounds, some with years of formal training, 
-                        others with significant gaps in their musical knowledge. What they learn can vary 
-                        drastically, leaving many without a solid "middle-ground" understanding. </p>
-                        
-                    <p> My mission is to create a comprehensive resource where everyone can find what they need 
-                        to grow, regardless of their starting point. </p>
+            <!-- Feature Cards -->
+            <div class="col-lg-6 d-flex flex-column gap-3">
+
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-3 center_object_vertically primary_background" style="min-height: 90px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                        </div>
+                        <div class="col-9 card-body">
+                            <h5 class="mb-1"> Expert-Verified Content </h5>
+                            <p class="mb-0"> Every article is reviewed by musicians for accuracy and quality. </p>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- About Cards -->
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-3 center_object_vertically">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-                                </div>
-                                
 
-                                <div class="col-lg-9">
-                                    <h4> Expert-Verified Content</h4>
-                                    <p> Every article is reviewed by musicians for accuracy and quality.</p>
-                                </div>
-                            </div>
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-3 center_object_vertically primary_background" style="min-height: 90px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <div class="col-9 card-body">
+                            <h5 class="mb-1"> Accessible Learning </h5>
+                            <p class="mb-0"> Breaking down complex musical concepts into clear, understandable explanations for all levels. </p>
                         </div>
                     </div>
-                    
-                    <br>
-                    <!-- SECOND -->
-                    <br>
-                    
-                    <div class="card">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-3 center_object_vertically">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target-icon lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                                </div>
-                                
-
-                                <div class="col-lg-9">
-                                    <h4> Accessible Learning</h4>
-                                    <p> Breaking down complex musical concepts into clear, understandable explanations for all levels. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-                    <!-- Third -->
-                    <br>
-                    
-                    <div class="card">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-3 center_object_vertically">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
-                                </div>
-                                
-
-                                <div class="col-lg-9">
-                                    <h4> Passion for Education </h4>
-                                    <p> Born from a genuine desire to level the playing field in music education. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-3 center_object_vertically primary_background" style="min-height: 90px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                        </div>
+                        <div class="col-9 card-body">
+                            <h5 class="mb-1"> Passion for Education </h5>
+                            <p class="mb-0"> Born from a genuine desire to level the playing field in music education. </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

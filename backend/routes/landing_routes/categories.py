@@ -1,19 +1,19 @@
-from flask import render_template
+from flask import render_template, abort
 from backend.database.supabase import db
-import os
 
 def register_categories(app):
 
     @app.route("/instrument_family/<family>/<instrument>/<category>")
-
     def category(family, instrument, category):
-        response = db.table('categories').select('*, articles(title, summary), instruments!inner(name), category_types!inner(Name)').eq('category_types.Name', category).eq('instruments.name', instrument).execute()
-        articles = response.data
+        try:
+            response = db.table('categories').select('*, articles(title, summary), instruments!inner(name), category_types!inner(Name)').eq('category_types.Name', category).eq('instruments.name', instrument).execute()
+        except Exception:
+            abort(500)
 
-        article_list = []
+        article_list = [i['articles'] for i in response.data if i['category_types'] is not None]
 
-        for i in articles:
-            if i['category_types'] is not None:
-                article_list.append(i['articles'])
-
-        return render_template('landing_pages/categories.html', family_name=family, instrument_name=instrument, category_name=category, articles=article_list)
+        return render_template('landing_pages/categories.html',
+                               family_name=family,
+                               instrument_name=instrument,
+                               category_name=category,
+                               articles=article_list)

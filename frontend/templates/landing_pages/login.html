@@ -5,8 +5,21 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="auth_page">
     <div class="auth_card">
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="auth_alert alert alert-dismissible fade show" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
         <!-- Branding Header -->
         <div class="auth_header primary_background">
@@ -31,12 +44,13 @@
             <div class="tab-pane fade show active" id="login">
                 <h3 class="mb-1"> Welcome Back! </h3>
                 <p class="auth_sub mb-4"> Sign in to your MyMelodic account </p>
-                <form>
+
+                <form action="{{url_for('login_request')}}" method="POST">
                     <label for="input_email" class="form-label auth_label"> Email </label>
-                    <input class="form-control auth_input mb-3" id="input_email" type="email" placeholder="Enter email...">
+                    <input class="form-control auth_input mb-3" id="input_email" name="email" type="email" placeholder="Enter email..." required>
 
                     <label for="input_password" class="form-label auth_label"> Password </label>
-                    <input class="form-control auth_input mb-4" id="input_password" type="password" placeholder="Enter password...">
+                    <input class="form-control auth_input mb-4" id="input_password" name="password" type="password" placeholder="Enter password..." required>
 
                     <button class="btn accent_background primary_text auth_submit" type="submit"> Sign In </button>
                 </form>
@@ -45,26 +59,26 @@
             <div class="tab-pane fade" id="signup">
                 <h3 class="mb-1"> Welcome to MyMelodic! </h3>
                 <p class="auth_sub mb-4"> We're so excited you're joining us in this journey! </p>
-                <form>
+                <form action="{{url_for('signup_request')}}" method="POST">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="signup_first_name" class="form-label auth_label"> First Name </label>
-                            <input class="form-control auth_input" id="signup_first_name" type="text" placeholder="First name...">
+                            <input class="form-control auth_input" id="signup_first_name" name="first_name" type="text" placeholder="First name..." required>
                         </div>
                         <div class="col">
                             <label for="signup_last_name" class="form-label auth_label"> Last Name </label>
-                            <input class="form-control auth_input" id="signup_last_name" type="text" placeholder="Last name...">
+                            <input class="form-control auth_input" id="signup_last_name" name="last_name" type="text" placeholder="Last name..." required>
                         </div>
                     </div>
 
                     <label for="signup_email" class="form-label auth_label"> Email </label>
-                    <input class="form-control auth_input mb-3" id="signup_email" type="email" placeholder="Enter email...">
+                    <input class="form-control auth_input mb-3" id="signup_email" name="email" type="email" placeholder="Enter email..." required>
 
                     <label for="signup_password" class="form-label auth_label"> Password </label>
-                    <input class="form-control auth_input mb-3" id="signup_password" type="password" placeholder="Create a password...">
+                    <input class="form-control auth_input mb-3" id="signup_password" name="password" type="password" placeholder="Create a password..." required>
 
                     <label for="signup_confirm_password" class="form-label auth_label"> Confirm Password </label>
-                    <input class="form-control auth_input mb-4" id="signup_confirm_password" type="password" placeholder="Confirm your password...">
+                    <input class="form-control auth_input mb-4" id="signup_confirm_password" name="confirm_password" type="password" placeholder="Confirm your password..." required>
 
                     <button class="btn accent_background primary_text auth_submit" type="submit"> Create Account </button>
                 </form>

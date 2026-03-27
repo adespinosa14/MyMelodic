@@ -1,8 +1,25 @@
 {% extends 'landing_template.html' %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
 {% block content %}
+
 <div class="auth_page">
     <div class="auth_card">
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="auth_alert alert alert-dismissible fade show" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
         <!-- Branding Header -->
         <div class="auth_header primary_background">
@@ -21,18 +38,19 @@
             </li>
         </ul>
 
-        <!-- Tab Content -->
+        <!-- Tab Content --> 
         <div class="tab-content auth_body">
 
             <div class="tab-pane fade show active" id="login">
                 <h3 class="mb-1"> Welcome Back! </h3>
                 <p class="auth_sub mb-4"> Sign in to your MyMelodic account </p>
-                <form>
+
+                <form action="{{url_for('login_request')}}" method="POST">
                     <label for="input_email" class="form-label auth_label"> Email </label>
-                    <input class="form-control auth_input mb-3" id="input_email" type="email" placeholder="Enter email...">
+                    <input class="form-control auth_input mb-3" id="input_email" name="email" type="email" placeholder="Enter email..." required>
 
                     <label for="input_password" class="form-label auth_label"> Password </label>
-                    <input class="form-control auth_input mb-4" id="input_password" type="password" placeholder="Enter password...">
+                    <input class="form-control auth_input mb-4" id="input_password" name="password" type="password" placeholder="Enter password..." required>
 
                     <button class="btn accent_background primary_text auth_submit" type="submit"> Sign In </button>
                 </form>
@@ -41,26 +59,26 @@
             <div class="tab-pane fade" id="signup">
                 <h3 class="mb-1"> Welcome to MyMelodic! </h3>
                 <p class="auth_sub mb-4"> We're so excited you're joining us in this journey! </p>
-                <form>
+                <form action="{{url_for('signup_request')}}" method="POST">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="signup_first_name" class="form-label auth_label"> First Name </label>
-                            <input class="form-control auth_input" id="signup_first_name" type="text" placeholder="First name...">
+                            <input class="form-control auth_input" id="signup_first_name" name="first_name" type="text" placeholder="First name..." required>
                         </div>
                         <div class="col">
                             <label for="signup_last_name" class="form-label auth_label"> Last Name </label>
-                            <input class="form-control auth_input" id="signup_last_name" type="text" placeholder="Last name...">
+                            <input class="form-control auth_input" id="signup_last_name" name="last_name" type="text" placeholder="Last name..." required>
                         </div>
                     </div>
 
                     <label for="signup_email" class="form-label auth_label"> Email </label>
-                    <input class="form-control auth_input mb-3" id="signup_email" type="email" placeholder="Enter email...">
+                    <input class="form-control auth_input mb-3" id="signup_email" name="email" type="email" placeholder="Enter email..." required>
 
                     <label for="signup_password" class="form-label auth_label"> Password </label>
-                    <input class="form-control auth_input mb-3" id="signup_password" type="password" placeholder="Create a password...">
+                    <input class="form-control auth_input mb-3" id="signup_password" name="password" type="password" placeholder="Create a password..." required>
 
                     <label for="signup_confirm_password" class="form-label auth_label"> Confirm Password </label>
-                    <input class="form-control auth_input mb-4" id="signup_confirm_password" type="password" placeholder="Confirm your password...">
+                    <input class="form-control auth_input mb-4" id="signup_confirm_password" name="confirm_password" type="password" placeholder="Confirm your password..." required>
 
                     <button class="btn accent_background primary_text auth_submit" type="submit"> Create Account </button>
                 </form>
@@ -69,128 +87,5 @@
         </div>
     </div>
 </div>
-
-<style>
-.auth_page {
-    min-height: calc(100vh - 120px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.auth_card {
-    width: 100%;
-    max-width: 460px;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-}
-
-.auth_header {
-    padding: 36px 32px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.auth_brand_title {
-    color: #FDFCFA;
-    font-size: 1.6rem;
-    margin: 0;
-}
-
-.auth_brand_sub {
-    color: rgba(253, 252, 250, 0.55);
-    font-size: 0.875rem;
-    margin: 0;
-}
-
-.auth_tabs {
-    border-bottom: 1px solid var(--border);
-    background-color: var(--bg-warm);
-}
-
-.auth_tab {
-    padding: 14px 20px;
-    border: none;
-    border-radius: 0;
-    background: none;
-    color: var(--navy);
-    font-weight: 500;
-    opacity: 0.5;
-    transition: opacity 0.2s ease, border-bottom-color 0.2s ease;
-    border-bottom: 3px solid transparent;
-}
-
-.auth_tab:hover {
-    opacity: 0.75;
-    background: none;
-    color: var(--navy);
-}
-
-.auth_tab.active {
-    opacity: 1;
-    color: var(--navy);
-    background: none;
-    border-bottom: 3px solid var(--gold);
-}
-
-.auth_body {
-    padding: 32px;
-    background-color: var(--bg-card);
-}
-
-.auth_sub {
-    color: #6b6560;
-    font-size: 0.9rem;
-}
-
-.auth_label {
-    font-weight: 500;
-    font-size: 0.875rem;
-    color: var(--navy);
-    margin-bottom: 6px;
-}
-
-.auth_input {
-    background-color: var(--bg-base);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--navy);
-    padding: 10px 14px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.auth_input:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(245, 165, 6, 0.15);
-    background-color: var(--bg-base);
-    color: var(--navy);
-    outline: none;
-}
-
-.auth_input::placeholder {
-    color: #b0aa9f;
-}
-
-.auth_submit {
-    width: 100%;
-    padding: 12px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    border-radius: 8px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.auth_submit:hover {
-    box-shadow: 0 0 18px rgba(245, 165, 6, 0.35);
-    transform: translateY(-1px);
-}
-</style>
 
 {% endblock %}

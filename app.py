@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import os
 from backend.routes import register_routes
+from dotenv import load_dotenv
 
 base_directory = os.path.abspath(os.path.dirname(__file__))
 template_directory = os.path.join(base_directory, "frontend", "templates")
@@ -17,6 +18,13 @@ def not_found(e):
 @app.errorhandler(500)
 def server_error(e):
     return render_template("errors/500.html"), 500
+
+load_dotenv()
+
+app.config.update(
+    TESTING=True,
+    SECRET_KEY=os.getenv('FLASK_SECRET_KEY')
+)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

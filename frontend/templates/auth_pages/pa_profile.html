@@ -1,0 +1,10 @@
+{% extends 'pa_template.html' %}
+
+{% block content %}
+<div class="new_page">
+    <h1> Profile </h1>
+    <form action="{{ url_for('signout_request' )}}">
+        <button class="btn bg-danger"> Sign Out </button>
+    </form>
+</div>
+{% endblock %}

@@ -14,17 +14,15 @@ def register_login(app):
             password = data['password']
 
             try:
-                db.sign_in_with_password({
+                db.auth.sign_in_with_password({
                     'email' : email,
                     'password' : password
                 })
 
-                redirect(url_for(''))
+                return redirect(url_for('pa_home'))
             except Exception as e:
                 flash(f'Login Error: {e}')
                 return redirect(url_for('login'))
-
-        return redirect(url_for('login'))
 
     @app.route("/signup_request", methods=['GET', 'POST'])
     def signup_request():
